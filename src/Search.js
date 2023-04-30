@@ -7,7 +7,7 @@ import SearchBody from "./SearchBody";
 class Search extends React.Component {
   state = {
     pokeSearch: "",
-    onCall: false,
+    onCall: true,
   };
   searchPoke = () => {};
   renderBody = () => {
