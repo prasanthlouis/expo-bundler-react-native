@@ -7,7 +7,7 @@ import React from "react";
 
 export default class App extends React.Component {
   state = {
-    currentScreen: "landing",
+    currentScreen: "search",
   };
   switchScreen = (screen) => {
     this.setState({ currentScreen: screen });
