@@ -10,8 +10,13 @@ class Landing extends React.Component {
           source={myBackground}
           style={{ width: "100%", height: "100%" }}>
           <View style={styles.viewStyle}>
-            <Text style={styles.titleStyle}> Welcome to PokeSearch</Text>
-            <Button block={true} style={styles.buttonStyle} onPress={() => {}}>
+            <Text style={styles.titleStyle}>Welcome to PokeSearch</Text>
+            <Button
+              block={true}
+              style={styles.buttonStyle}
+              onPress={() => {
+                this.props.switchScreen("search");
+              }}>
               <Text style={styles.buttonText}>Start Searching!</Text>
             </Button>
           </View>
@@ -35,7 +40,6 @@ const styles = {
   titleStyle: {
     fontSize: 30,
     color: "blue",
-    alignItems: "center",
   },
   buttonStyle: {
     margin: 10,
