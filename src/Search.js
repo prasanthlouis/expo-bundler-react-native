@@ -2,11 +2,21 @@ import React from "react";
 import { View, Text } from "react-native";
 import { HStack, Icon, Input, StatusBar, Box, Item } from "native-base";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
+import PokeLoader from "./PokeLoader";
+import SearchBody from "./SearchBody";
 class Search extends React.Component {
   state = {
     pokeSearch: "",
+    onCall: false,
   };
   searchPoke = () => {};
+  renderBody = () => {
+    if (this.state.onCall) {
+      return <PokeLoader />;
+    } else {
+      return <SearchBody />;
+    }
+  };
   render() {
     return (
       <>
@@ -39,6 +49,7 @@ class Search extends React.Component {
             />
           </HStack>
         </HStack>
+        {this.renderBody()}
       </>
     );
   }
