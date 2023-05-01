@@ -29,7 +29,7 @@ class Landing extends React.Component {
 const styles = {
   container: {
     flex: 1,
-    marginTop: Platform.OS === "android" ? 64 : 0,
+    marginTop: 64,
   },
   viewStyle: {
     flex: 1,

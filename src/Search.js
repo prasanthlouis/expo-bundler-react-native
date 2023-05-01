@@ -9,6 +9,7 @@ class Search extends React.Component {
   state = {
     pokeSearch: "",
     onCall: true,
+    data: {},
   };
   searchPoke = () => {
     this.setState({ onCall: true });
@@ -31,7 +32,7 @@ class Search extends React.Component {
     if (this.state.onCall) {
       return <PokeLoader />;
     } else {
-      return <SearchBody />;
+      return <SearchBody data={this.state.data} />;
     }
   };
   render() {
