@@ -40,9 +40,9 @@ class SearchBody extends React.Component {
                 <Box px={2} py={2} rounded="md">
                   <Text style={{ fontWeight: "bold" }}>Size</Text>
                   <Divider bg="AD6" thickness="6" orientation="horizontal" />
-                  <Text>Weight - {item.weight}</Text>
+                  <Text>Weight - {item.weight} kg</Text>
                   <Divider bg="AD6" thickness="2" orientation="horizontal" />
-                  <Text>Height - {item.height}</Text>
+                  <Text>Height - {item.height / 10} m</Text>
                 </Box>
               </View>
             )}
