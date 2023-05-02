@@ -25,28 +25,46 @@ class SearchBody extends React.Component {
           />
         </View>
         <View style={styles.info}>
-          {/*           <ListItem>
-            <Text style={{ fontWeight: "bold" }}>Size</Text>
-          </ListItem> */}
-          {/*           <ListItem>
-            <Text style={{ fontWeight: "bold" }}>
-              Height = {pokemon.height}
-            </Text>
-          </ListItem> */}
           <FlatList
             data={data}
             renderItem={({ item }) => (
               <View>
+                <Text
+                  style={{ fontWeight: "bold", backgroundColor: "#F0EAD6" }}>
+                  Size
+                </Text>
                 <Box px={2} py={2} rounded="md">
-                  <Text style={{ fontWeight: "bold" }}>Size</Text>
                   <Divider bg="AD6" thickness="6" orientation="horizontal" />
                   <Text>Weight - {item.weight} kg</Text>
-                  <Divider bg="AD6" thickness="2" orientation="horizontal" />
                   <Text>Height - {item.height / 10} m</Text>
+                  <Divider bg="AD6" thickness="6" orientation="horizontal" />
                 </Box>
               </View>
             )}
           />
+          <View style={styles.info}>
+            <Text
+              style={{
+                fontWeight: "bold",
+                backgroundColor: "#F0EAD6",
+                paddingLeft: 8,
+              }}>
+              Abilities
+            </Text>
+            <Divider bg="AD6" thickness="6" orientation="horizontal" />
+            <FlatList
+              px={2}
+              py={2}
+              data={pokemon.abilities}
+              renderItem={({ item }) => (
+                <View>
+                  <Box rounded="md">
+                    <Text>{item.ability.name}</Text>
+                  </Box>
+                </View>
+              )}
+            />
+          </View>
         </View>
       </View>
     );
@@ -70,9 +88,7 @@ const styles = {
     alignItems: "center",
   },
   info: {
-    backgroundColor: "#F0EAD6",
     opacity: 0.8,
-    padding: 10,
   },
 };
 
